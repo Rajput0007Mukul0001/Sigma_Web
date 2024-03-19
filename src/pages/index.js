@@ -3,6 +3,8 @@ import Header from "../Components/Header";
 import Banner from "../Components/Banner";
 import ProductFeed from "../Components/ProductFeed";
 import { getSession } from "next-auth/react";
+import '../../tailwind.config';
+import '../styles/globals.css';
 
 // here we pass props or can de-structure it 
 
