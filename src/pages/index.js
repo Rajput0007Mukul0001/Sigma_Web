@@ -1,41 +1,61 @@
 import Head from "next/head";
+import Header from "../Components/Header";
+import Banner from "../Components/Banner";
+import ProductFeed from "../Components/ProductFeed";
+import { getSession } from "next-auth/react";
 
-export default function Home() {
+// here we pass props or can de-structure it 
+
+export default function Home({products}) {
   return (
-    <div>
+    <div className="bg-gray-300 ">
       <Head>
-        <title>Amazon 2.0</title>
+        <title>Σ-Kart</title>
       </Head>
 
-      {/* ---- TO BEGIN, delete this section and GET CODING!!! ---- */}
-      <center className="grid place-items-center mt-10">
-        <h1 className="text-5xl">Lets build Amazon 2.0</h1>
-        <h2>This is your starter template!</h2>
-        <br />
-        <h3 className="font-bold">
-          We will be using Next.js / Tailwind CSS / Redux / Firebase / NextAuth
-        </h3>
-        <i>(Dont worry, its all setup and ready to use!)</i>
-        <h4>Get Ready, Get Set, GO!!!</h4>
+    {/* <h1>Header Component</h1> */}
+      {/* header */}
+      <Header/>
 
-        <h5 className="mb-10">#PAPAFAM</h5>
+    <main className="max-w-screen-2xl mx-auto">
 
-        <div className="bg-red-300 p-10">
-          <p className="font-bold">
-            Dont forget to register for the challenge here!
-          </p>
-          <p>👇👇👇</p>
-          <a
-            href="https://www.papareact.com/secret-challenge"
-            className="text-blue-400 underline p-3 font-bold"
-          >
-            CLICK HERE TO REGISTER NOW
-          </a>
-        </div>
+    {/* Banner  */}
+    
+    <Banner/>
 
-        <p className="mt-24">Built with 💙 by Sonny Sangha (PAPA REACT)</p>
-      </center>
-      {/* ---- ---- */}
+    {/* ProductFeed */}
+
+    <ProductFeed products={products} />
+
+    {/* pass this as a prop to get from the productFeed.js okay */}
+
+    {/* <p>{products}</p>  this will give error as it is only json here (this problem solved)*/}
+
+    </main>
+
     </div>
   );
 }
+
+
+export async function getServerSideProps(context){
+ 
+ const session = await getSession(context);
+
+  const products = await fetch("https://fakestoreapi.com/products").then(
+    (res) => res.json()
+    );
+
+    // here we got the data from the server then how to just pass it to the component here
+    // so we return them as a props because of Es6 features here (problem solved)
+
+    return {
+      props:{
+        products,
+        session
+    }
+  };
+
+  }
+
+// GET-> https://fakestoreapi.com/products

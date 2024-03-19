@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+   .link{
+     @apply cursor-pointer hover:underline;
+   } 
+   .button{
+    @apply p-2 text-xs md:text-sm bg-gradient-to-b from-green-300 to-green-600 border border-blue-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500 active:from-blue-500;
+   }
+   .description-container {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: 1.5em; /* Adjust the max-height based on your needs */
+  }
+  
+}
