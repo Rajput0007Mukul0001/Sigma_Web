@@ -77,7 +77,7 @@ function Product({id,title,price,description,category,image}) {
         </div>
         
     
-        <p className='text-xs my-2 line-clamp-3 truncate sm:line-clamp-1 sm:truncate'>{description}</p>
+        <p className=' left-2 text-xs text-center mx-2 line-clamp-3   sm:line-clamp-1 sm:truncate md:line-clamp-2 md:truncate md:w-min'>{description}</p>
 
 
         <div className='mb-5'>
@@ -86,7 +86,7 @@ function Product({id,title,price,description,category,image}) {
 
         {hasPrime && (
         <div className='flex items-center space-x-2 -mt-5'>
-            <img className="w-12" src="https://links.papareact.com/fdw" alt="prime"/>
+            <img className="w-12 p-1 m-1" src="https://th.bing.com/th/id/OIP.bFa4AJt4Kh3NA1cY2aFlmQHaHa?w=189&h=189&c=7&r=0&o=5&pid=1.7" alt="prime"/>
             <p className='text-xs text-gray-500'>FREE DELIVERY</p>
         </div>
         )}
