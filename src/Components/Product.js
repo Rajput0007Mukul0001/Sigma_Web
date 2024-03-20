@@ -77,7 +77,7 @@ function Product({id,title,price,description,category,image}) {
         </div>
         
     
-        <p className=' left-2 text-xs text-center mx-2 line-clamp-3  sm:line-clamp-1  md:line-clamp-2 md:w-min'>{description}</p>
+        <p className=' left-2 text-xs  mx-2 line-clamp-3 sm:line-clamp-1  md:line-clamp-2 '>{description}</p>
 
 
         <div className='mb-5'>
