@@ -42,7 +42,7 @@ const router = useRouter();
   return (
     <header>
         {/* top nav images wala only search bar as well */}
-        <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2"> 
+        <div className="flex items-center bg-amazon_blue p-1 flex-grow full-w py-2 flex-wrap-reverse "> 
             <div onClick={()=> router.push("/")} className="mt-2 flex items-center  flex-grow sm:flex-grow-0 p-4">
                 <Image
     
@@ -81,7 +81,7 @@ const router = useRouter();
             {/* 2 */}
             <div onClick={()=>router.push("/orders")} className='link'>
                 <p>Returns</p>
-                <p className='font-extrabold md:text-sm'>& Orders</p>
+                <p className='items-center font-extrabold md:text-sm'>& Orders</p>
             </div>
             {/* 3 */}
             <div onClick={()=> router.push("/checkout")} className='relative link flex items-center'>
@@ -90,12 +90,12 @@ const router = useRouter();
             </span>
 
             <ShoppingCartIcon className='h-10' />
-            <p className='hidden md:inline font-extrabold md:text-sm'>Basket</p>
+            <p className='hidden md:inline font-extrabold md:text-sm sm:text-sm'>Basket</p>
             </div>
 
-            <div onClick={!session ? null : signOut} className="link">
-                <ArrowRightIcon className="relative h-10"/>
-                <p className='font-extrabold md:text-sm'>Log Out</p>
+            <div onClick={!session ? null : signOut} className="link items-center ">
+                <ArrowRightIcon className="relative h-10 p-2 m-1"/>
+                <p className='font-extrabold md:text-sm sm:text-xs'>Log Out</p>
             </div>
 
             {/* end of the container div */}
