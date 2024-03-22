@@ -8,7 +8,7 @@ function Banner() {
     <div className='relative'>
        
        {/* imaginary div for the graident purpose only it's a trick */}
-       <div className='absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20'/>
+       <div className='absolute w-full sm:w-full xs:w-full md:w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20'/>
        
         <Carousel
         autoPlay
@@ -23,7 +23,7 @@ function Banner() {
         {/* 1 */}
 
         <div className='carousel-image-container'>
-        <img loading="lazy" src='https://links.papareact.com/gi1' style={{  height: '60vh' }} alt=""/>
+        <img loading="lazy" src='https://links.papareact.com/gi1' style={{  height: '50vh' }} alt=""/>
         </div>
         
         {/* 2 */}

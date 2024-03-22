@@ -58,7 +58,7 @@ function CheckoutProduct({id,title,price,description,category,image,hasPrime,rat
 
     <p className='text-xs my-2 mt-2 mb-2 line-clamp-3 sm:line-clamp-2 truncate'>{description}</p>
 
-    <Currency quantity={price} currency='GBP'/>
+    <Currency quantity={price*105} currency='INR'/>
 
     {hasPrime &&(
         <div className='flex items-center space-x-2'>

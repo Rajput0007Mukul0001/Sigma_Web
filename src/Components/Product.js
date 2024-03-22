@@ -59,8 +59,10 @@ function Product({id,title,price,description,category,image}) {
     // whatever number we pass in the useState same number of starts it will generate there
   
     return (
-    <div className='relative flex flex-col m-5 bg-white z-30 p-10 bg-gradient-to-b from-transparent to-gray-400 sm:w-full sm:max-w-xs sm:mx-auto xs:max-w-full xs:w-full'  >
-        <p className='absolute top-2 right-2 text-xs italic text-gray-400 sm:hidden'>
+        
+    <div className='relative max-w-screen-lg mx-auto flex flex-col m-5 bg-white z-30 p-10 bg-gradient-to-b from-transparent to-gray-400 sm:w-full sm:max-w-xs sm:mx-auto xs:max-w-full xs:w-full'  >
+       
+        <p className='absolute top-2 right-2 text-xs italic text-gray-400'>
             {category}
         </p>
         
@@ -77,11 +79,11 @@ function Product({id,title,price,description,category,image}) {
         </div>
         
     
-        <p className=' left-2 text-xs  mx-2 line-clamp-3 sm:line-clamp-1  md:line-clamp-2 '>{description}</p>
+        {/* <p className='left-2 text-xs  mx-2 line-clamp-3 sm:line-clamp-1 sm:hidden  md:line-clamp-2 '>{description}</p> */}
 
 
         <div className='mb-5'>
-        <Currency quantity={price} currency='GBP'/>
+        <Currency quantity={price*105} currency='INR'/>
         </div>
 
         {hasPrime && (

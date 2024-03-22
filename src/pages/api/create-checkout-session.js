@@ -17,8 +17,8 @@ try{
         quantity: 1,
         // price:item.priceID,
         price_data: {
-            currency: 'GBP' ? 'GBP':'INR',
-            unit_amount: item.price*100,
+            currency: 'INR',
+            unit_amount: item.price*100*105,
             product_data: {
                 name: item.title,
                 images: [item.image],
@@ -29,11 +29,13 @@ try{
 
     // stripe account per we have create the shipping_product also get the shipping ID from there ok
     // try {
+      // allowed_countries: ['GB', 'US', 'CA', 'IN'],
+
         const checkoutSession = await stripe.checkout.sessions.create({
           payment_method_types: ['card'],
         //   shipping_rates: ['shr_1Or0euSDysHtItdlEF2oND55'],
           shipping_address_collection: {
-            allowed_countries: ['GB', 'US', 'CA', 'IN'],
+            allowed_countries: ['IN'],
           },
           line_items: transfromedItems,
           mode: 'payment',

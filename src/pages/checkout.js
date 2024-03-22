@@ -97,7 +97,7 @@ export default function Checkout() {
         <h2 className='whitespace-nowrap'>
         SubTotal {items.length} items : {" "}
         <span className='font-bold'>
-          <Currency quantity={total} currency='GBP'/>
+          <Currency quantity={total*105} currency='INR'/>
         </span>
         </h2>
 

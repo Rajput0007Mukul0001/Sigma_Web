@@ -19,7 +19,8 @@ import {
     MenuIcon,
     SearchIcon,
     ShoppingCartIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
+    ArrowRightStartOnRectangleIcon
 } from "@heroicons/react/outline"
 
 import { useRouter } from "next/router";
@@ -42,7 +43,7 @@ const router = useRouter();
   return (
     <header>
         {/* top nav images wala only search bar as well */}
-        <div className="flex items-center bg-amazon_blue p-1 flex-grow full-w py-2 flex-wrap-reverse "> 
+        <div className="flex items-center bg-amazon_blue p-1 flex-grow full-w py-2 flex-wrap "> 
             <div onClick={()=> router.push("/")} className="mt-2 flex items-center  flex-grow sm:flex-grow-0 p-4">
                 <Image
     
@@ -50,9 +51,9 @@ const router = useRouter();
                 width = {50}
                 height = {50}
                 objectFit='contain'
-                className='cursor-pointer'
+                className='cursor-pointer flex-shrink'
                 />
-                <p className=' flex  text-white mx-4 md:text-sm font-medium ' >Σ-Kart</p>
+                <p className=' flex flex-shrink text-white mx-4 md:text-sm sm:text-xs font-medium ' >Σ-Kart</p>
             </div>
 
         {/* search bar here  child of big div */}
@@ -67,21 +68,21 @@ const router = useRouter();
 
         {/* right part of the navbar */}
 
-        <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
+        <div className='text-white flex items-center text-xs space-x-6 mx-4 whitespace-nowrap'>
             {/* now here we have three div in containing div */}
             {/* 1 */}
             {/* when we are not sign in then only sign in  */}
             
-            <div onClick={!session ? signIn : null} className='link font-bold'>
+            <div onClick={!session ? signIn : null} className='link font-extrabold'>
                 <p>
                     {session ? `${session.user.name}`: "Sign In"}
                 </p>
-                <p className='font-extrabold md:text-sm sm:text-sm'>Account & List</p>
+                {/* <p className='font-extrabold md:text-sm sm:text-sm'>Country Name</p> */}
             </div>
             {/* 2 */}
             <div onClick={()=>router.push("/orders")} className='link'>
-                <p>Returns</p>
-                <p className='items-center font-extrabold md:text-sm sm:text-xs'>& Orders</p>
+                {/* <p className='items-center font-extrabold md:text-sm sm:text-xs'>Returns</p> */}
+                <p className='items-center font-extrabold md:text-sm sm:text-xs'>Orders</p>
             </div>
             {/* 3 */}
             <div onClick={()=> router.push("/checkout")} className='relative link flex items-center'>
@@ -94,8 +95,8 @@ const router = useRouter();
             </div>
 
             <div onClick={!session ? null : signOut} className="link items-center ">
-                <ArrowRightIcon className="relative h-10 p-2 m-1"/>
-                <p className='font-extrabold md:text-sm sm:text-xs'>Log Out</p>
+                <ArrowRightIcon className="relative h-10 p-2"/>
+                <p className='font-bold hidden md:inline md:text-sm sm:text-xs'>Log Out</p>
             </div>
 
             {/* end of the container div */}
