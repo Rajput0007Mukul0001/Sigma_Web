@@ -1,5 +1,9 @@
 4000003560000008
 
+4000-0035-6000-0008
+
 india card dumy
 
 stripe listen --forward-to localhost:3000/api/webhook
+
+

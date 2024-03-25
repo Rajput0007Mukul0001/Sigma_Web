@@ -108,21 +108,6 @@ const orders = await Promise.all(
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // firebase db
 // const stripeOrders = await db.collection("users")
 // .doc(session.user.email)

@@ -40,6 +40,37 @@ const items = useSelector(selectItems);
 
 // session.user
 const router = useRouter();
+
+const sendEmail = () => {
+    let mailTransporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'mukulranadpr@gmail.com',
+            pass: '*************'
+        }
+    });
+
+    let mailDetails = {
+        from: 'mukulranadpr@gmail.com',
+        to: 'mukulranadpr@gmail.com',
+        subject: 'Test mail',
+        text: 'Node.js testing mail for GeeksforGeeks'
+    };
+
+    mailTransporter.sendMail(mailDetails, function(err, data) {
+        if (err) {
+            console.log('Error Occurs:', err);
+        } else {
+            console.log('Email sent successfully');
+        }
+    });
+};
+
+const handleEmailButtonClick = () => {
+    sendEmail();
+};
+
+
   return (
     <header>
         {/* top nav images wala only search bar as well */}
@@ -53,7 +84,7 @@ const router = useRouter();
                 objectFit='contain'
                 className='cursor-pointer flex-shrink'
                 />
-                <p className=' flex flex-shrink text-white mx-4 md:text-sm sm:text-xs font-medium ' >Σ-Kart</p>
+                <p className='cursor-pointer flex flex-shrink text-white mx-4 md:text-sm sm:text-xs font-medium ' onClick={handleEmailButtonClick}>Σ-Kart</p>
             </div>
 
         {/* search bar here  child of big div */}
@@ -81,7 +112,7 @@ const router = useRouter();
             </div>
             {/* 2 */}
             <div onClick={()=>router.push("/orders")} className='link'>
-                {/* <p className='items-center font-extrabold md:text-sm sm:text-xs'>Returns</p> */}
+                <p className='items-center font-extrabold md:text-sm sm:text-xs'>Returns</p>
                 <p className='items-center font-extrabold md:text-sm sm:text-xs'>Orders</p>
             </div>
             {/* 3 */}
